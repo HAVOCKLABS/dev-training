@@ -1,0 +1,2 @@
+para correr server web con php usa> php -S localhost:8000
+
