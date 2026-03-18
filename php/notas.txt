@@ -1,2 +1,30 @@
+
+                //web server
 para correr server web con php usa> php -S localhost:8000
+
+                
+                //Git
+add = prepara cambios
+commit = guardar version
+push = subir a la nube
+pull = traer cambios
+
+                        //FORMATEO DE TEXTO EN PHP
+%s y %d son especificadores de formato utilizados en funciones como sprintf() y printf()
+en PHP para insertar valores en cadenas de texto de forma segura y controlada. 
+
+%s indica que se debe insertar un valor de tipo cadena (string) en la posición donde aparece.  
+Por ejemplo, sprintf("Hola %s", "Ana") devuelve "Hola Ana".
+
+%d indica que se debe insertar un valor entero (integer) en la posición correspondiente.  
+Por ejemplo, sprintf("Tengo %d años", 25) devuelve "Tengo 25 años". 
+
+El especificador %.2f en PHP se utiliza para formatear un número de punto flotante con
+exactamente dos decimales.
+
+                //Funciones mb_* para UTF-8
+Si trabajas con caracteres especiales (acentos, ñ, emojis),
+ usa las funciones mb_*: mb_strlen(), mb_substr(), mb_strtoupper(),
+  etc. Trabajan correctamente con UTF-8.
+
 
