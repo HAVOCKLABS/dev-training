@@ -9,6 +9,12 @@ commit = guardar version
 push = subir a la nube
 pull = traer cambios
 
+1)
+git add .
+git commit -m "Describe lo que hiciste"
+git push
+
+
                         //FORMATEO DE TEXTO EN PHP
 %s y %d son especificadores de formato utilizados en funciones como sprintf() y printf()
 en PHP para insertar valores en cadenas de texto de forma segura y controlada. 
@@ -28,3 +34,25 @@ Si trabajas con caracteres especiales (acentos, ñ, emojis),
   etc. Trabajan correctamente con UTF-8.
 
 
+//PHP
+//Para Ordenar segun determinado criterio
+usort($array, fn($a, $b) => /* comparación */);
+
+//PHP Operador de cohalecencia nula "??" 
+El?? El operador se llama operador de coalescencia nula. Devuelve el operando izquierdo si el operando no es nulo;
+de lo contrario devuelve el operando de la derecha.
+
+$rabbits;
+$rabbits = count($somearray);
+
+if ($rabbits == null) {
+    $rabbits = 0;
+}
+
+
+$rabbits = $rabbits ?? 0;
+
+
+Operadores modernos más usados
+?? (null coalescing), ?: (Elvis), y ?-> (nullsafe) 
+son operadores que usarás constantemente en código PHP moderno. Hacen el código más limpio y seguro.
