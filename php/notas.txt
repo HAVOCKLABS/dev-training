@@ -14,6 +14,32 @@ git add .
 git commit -m "Describe lo que hiciste"
 git push
 
+🔹 1. Deshacer el último push (manteniendo historial limpio)
+
+Si ya hiciste push y quieres revertir los cambios sin borrar el historial:
+
+git revert HEAD
+git push
+
+👉 Crea un commit nuevo que deshace el anterior.
+✔ Seguro si ya trabajas con más gente.
+
+🔹 2. Borrar el último commit del repositorio remoto (reescribir historia)
+
+Si quieres literalmente “como si nunca hubiera pasado”:
+
+git reset --hard HEAD~1
+git push --force
+
+👉 Elimina el último commit local y lo sobrescribe en remoto.
+⚠️ Peligroso si alguien más ya hizo pull.
+
+🔹 3. Deshacer varios commits
+git reset --hard HEAD~3
+git push --force
+
+👉 Borra los últimos 3 commits.
+
 
                         //FORMATEO DE TEXTO EN PHP
 %s y %d son especificadores de formato utilizados en funciones como sprintf() y printf()
@@ -56,3 +82,6 @@ $rabbits = $rabbits ?? 0;
 Operadores modernos más usados
 ?? (null coalescing), ?: (Elvis), y ?-> (nullsafe) 
 son operadores que usarás constantemente en código PHP moderno. Hacen el código más limpio y seguro.
+
+// En operaciones aritméticas, los strings se convierten a números
+// En contexto de string, los números se convierten a string

@@ -108,7 +108,7 @@ var_dump($numero); //int(100)
 //S T R I C T   T Y P E S
 //Puedes desactivar el type juggling en funciones usando declare(strict_types=1):
 
-declare(strict_types=1)
+//declare(strict_types=1)
 
 function sumar(int $a, int $b): int
 {
@@ -125,8 +125,6 @@ echo sumar("5", 3); //TypeError!
 //Recomendación profesional
 //Usa declare(strict_types=1) en todos tus archivos PHP. 
 //Te obligará a ser explícito con los tipos y detectarás errores antes de que lleguen a producción.
-
-<?php
  
 // Los datos de formularios siempre son strings
 $edad = $_POST['edad'] ?? '';  // "25" o ""
