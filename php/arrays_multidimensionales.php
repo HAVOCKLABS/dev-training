@@ -132,7 +132,7 @@ $tienda = [
     'categorias' => [
         [
             'id' => 1,
-            'productos' => 'Ordenadores',
+            'nombre' => 'Ordenadores',
             'productos' => [
                 ['id' => 101, 'nombre' => 'Laptop Pro', 'precio' => 1299],
                 ['id' => 102, 'nombre' => 'Desktop Gaming', 'precio' => 899]
@@ -157,5 +157,105 @@ foreach ($tienda['categorias'] as $categoria) {
     foreach ($categoria['productos'] as $producto) {
         echo " -  {$producto['nombre']} : {$producto['precio']}€\n";
     }
+    }
+    echo "\n";
+/**
+ * Buscar en arrays multidimensionales
+ */
+
+
+$usuarios = [
+    ['id' => 1, 'nombre' => 'Ana', 'email' => 'ana@ejemplo.com'],
+    ['id' => 2, 'nombre' => 'Luis', 'email' => 'luis@ejemplo.com'],
+    ['id' => 3, 'nombre' => 'María', 'email' => 'maría@ejemplo.com'],
+];
+
+// Buscar usuario por su id
+function buscarPorId(array $usuarios, int $id): ?array
+{
+    foreach ($usuarios as $usuario) {
+        if ($usuario['id'] === $id) {
+            return $usuario;
+        }
+    }
+    return null;
+}
+$usuario = buscarPorId($usuarios, 2);
+echo $usuario['nombre'] . "\n\n"; // Luis
+
+
+// Extraer una columna de todos los registros
+
+$emails = array_column($usuarios, 'email');
+print_r($emails);
+
+$nombres = array_column($usuarios, 'nombre');
+print_r($nombres);
+
+// Extraer columna como array asociativo
+
+$usuarioPorId = array_column($usuarios, null, 'id');
+print_r($usuarioPorId);
+
+// Ahora puedes acceder directamente por ID
+echo $usuarioPorId[2]['nombre']; // Luis
+echo "\n";
+
+// Modificar registros
+
+$productos = [
+    ['id' => 1, 'nombre' => 'Laptop', 'precio' => 999, 'stock' => 5],
+    ['id' => 2, 'nombre' => 'Mouse', 'precio' => 29, 'stock' => 50],
+    ['id' => 3, 'nombre' => 'Teclado', 'precio' => 79, 'stock' => 25],
+];
+
+// Modificar con referencia
+
+foreach($productos as &$producto){
+    $producto['precio'] *= 1.1 ; // Aumentar 10%
+}
+unset($producto); // ¡Importante!
+
+// Modificar producto especifico
+$producto[1]['stock'] = 45;
+
+// Aplicar descuento a productos caros
+foreach ($productos as $i => $producto) {
+    if ($producto['precio'] > 100) {
+        $producto[$i]['descuento'] = true;
+    }
 }
 
+// Eliminar registro por id
+
+$idEliminar = 2;
+foreach ($productos as $i => $producto) {
+    if ($producto['id'] === $idEliminar) {
+        unset($productos[$i]);
+        break;
+    }
+}
+// Reindexar
+$productos = array_values($productos);
+
+// Filtrar registros
+$productos = [
+    ['nombre' => 'Laptop', 'precio' => 999, 'stock' => 5],
+    ['nombre' => 'Mouse', 'precio' => 29, 'stock' => 0],
+    ['nombre' => 'Teclado', 'precio' => 79, 'stock' => 25],
+    ['nombre' => 'Monitor', 'precio' => 299, 'stock' => 0]
+];
+
+// Filtrar productos con stock
+$conStock = array_filter($productos, fn($p) =>$p['stock'] > 0 );
+print_r($conStock);
+
+// Filtrar por precio
+$baratos = array_filter($productos, fn($p) => $p['precio'] < 100);
+
+// Filtrar por multiples condiciones
+$disponibles = array_filter($productos, function($p) {
+    return $p['stock'] > 0 && $p['precio'] < 500;
+});
+
+//QUEDAN PENDIENTE AALGUNOS TEMAS DE ESTE PUNTO

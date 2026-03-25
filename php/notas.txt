@@ -74,8 +74,6 @@ $rabbits = count($somearray);
 if ($rabbits == null) {
     $rabbits = 0;
 }
-
-
 $rabbits = $rabbits ?? 0;
 
 
