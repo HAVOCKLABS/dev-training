@@ -83,3 +83,19 @@ son operadores que usarás constantemente en código PHP moderno. Hacen el códi
 
 // En operaciones aritméticas, los strings se convierten a números
 // En contexto de string, los números se convierten a string
+
+
+
+//VSCODE
+Duplicar hacia abajo: Shift + Alt + ↓ (Windows/Linux) o Shift + Option + ↓ (macOS). 
+Duplicar hacia arriba: Shift + Alt + ↑ (Windows/Linux) o Shift + Option + ↑ (macOS). 
+Alternativa nativa: En Windows/Linux, también funciona Ctrl + Shift + D para duplicar la línea actual. 
+
+
+Ctrl + Alt + Flecha Arriba/Abajo para insertar cursores en las líneas adyacentes
+
+// P S  
+Rename-Item -Path "C:\Documents\archivo1.txt" -NewName "archivo2.txt"
+
+// php
+<?= "manera abreviada de hacer un echo"?>
