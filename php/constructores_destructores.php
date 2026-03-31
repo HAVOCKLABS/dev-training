@@ -122,5 +122,7 @@ class Ejemplo{
     public function __destruct()
     {
         echo "Destruido : {$this -> nombre}\n";
+
+        
         }
 }

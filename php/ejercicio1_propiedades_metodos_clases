@@ -1,0 +1,22 @@
+<?php
+declare(strict_types=1);
+
+class Circulo
+{
+    public float $radio;
+
+    public function area():float
+    {
+        return M_PI * $this -> radio ** 2;
+    }
+    public function perimetro()
+    {
+        return 2 * M_PI * $this -> radio;    
+    }
+}
+
+$circ = new Circulo();
+$circ -> radio = 4;
+echo $circ->perimetro();
+echo "\n";
+echo $circ -> area();

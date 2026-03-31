@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fromulario en PHP</title>
+
+
+    
 </head>
 <body>
     <h1>Formulario en PHP</h1>
@@ -20,8 +23,6 @@
 
         <input type="submit" value="enviar"/>
     </form>
-
-
 
 </body>
 </html>
